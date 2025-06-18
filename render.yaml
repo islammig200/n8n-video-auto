@@ -5,6 +5,7 @@ services:
     branch: main
     region: frankfurt
     plan: free
+    dockerfilePath: ./Dockerfile.n8n
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
@@ -15,10 +16,7 @@ services:
       - key: N8N_HOST
         value: "0.0.0.0"
       - key: PORT
-        value: "5678"
-    image:
-      dockerfilePath: Dockerfile.n8n
-    repo: https://github.com/islammig200/n8n-video-auto
+        value: "80"
 
   - type: web
     name: short-video-maker
@@ -26,8 +24,8 @@ services:
     branch: main
     region: frankfurt
     plan: free
+    image:
+      url: gyoridavid/short-video-maker:latest-tiny
     envVars:
       - key: PEXELS_API_KEY
         value: "iSX6vtduQKe3bLWBd0V"
-    image:
-      name: gyoridavid/short-video-maker:latest-tiny
