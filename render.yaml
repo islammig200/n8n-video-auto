@@ -18,7 +18,7 @@ services:
       - key: PORT
         value: "80"
 
-  - type: web
+    - type: web
     name: short-video-maker
     runtime: image
     region: frankfurt
@@ -28,3 +28,6 @@ services:
     envVars:
       - key: PEXELS_API_KEY
         value: "iSX6vtduQKe3bLWBd0V"
+      - key: PORT
+        value: "3123"
+    healthCheckPath: /
