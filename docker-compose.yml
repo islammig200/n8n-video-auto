@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  n8n:
+    image: n8nio/n8n
+    ports:
+      - "10000:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=yourpassword
+      - N8N_HOST=0.0.0.0
+    restart: unless-stopped
+    depends_on:
+      - short-video-maker
+
+  short-video-maker:
+    image: gyoridavid/short-video-maker:latest-tiny
+    ports:
+      - "10001:3123"
+    environment:
+      - PEXELS_API_KEY=iSX6vtduQKe3bLWBd0V
+    restart: unless-stopped
