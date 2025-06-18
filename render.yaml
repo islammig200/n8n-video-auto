@@ -18,7 +18,7 @@ services:
       - key: PORT
         value: "80"
 
-    - type: web
+  - type: web
     name: short-video-maker
     runtime: image
     region: frankfurt
