@@ -21,7 +21,6 @@ services:
   - type: web
     name: short-video-maker
     runtime: image
-    branch: main
     region: frankfurt
     plan: free
     image:
